@@ -1,9 +1,9 @@
-import { Shield, TrendingUp, HeartPulse, PieChart, Landmark, Scale, Car } from "lucide-react";
+import { Shield, LineChart, HeartPulse, Landmark, Scale, Car } from "lucide-react";
 import growthAbstract from '../assets/growth_abstract.png';
 
 const SERVICES = [
   { i: <Car size={32} />, t: "Vehicle Insurance", d: "High-performance motor insurance for executive fleets and personal luxury vehicles." },
-  { i: <TrendingUp size={32} />, t: "Mutual Funds & SIPs", d: "Diversified mutual fund portfolios and automated SIP systems for long-term growth." },
+  { i: <LineChart size={32} />, t: "Mutual Funds & SIPs", d: "Diversified mutual fund portfolios and automated SIP systems for long-term growth." },
   { i: <HeartPulse size={32} />, t: "Health Insurance", d: "Comprehensive health coverage with global access and zero-deductible plans." },
   { i: <Shield size={32} />, t: "Legacy Protection", d: "High-value term insurance and estate planning for generational wealth preservation." },
   { i: <Landmark size={32} />, t: "Tax Optimization", d: "Regulatory-grade tax planning to protect your net yields from inflation." },

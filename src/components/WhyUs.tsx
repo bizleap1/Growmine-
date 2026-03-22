@@ -1,4 +1,4 @@
-import { TrendingUp, Users, ShieldCheck } from "lucide-react";
+import { LineChart, ShieldCheck } from "lucide-react";
 import trustMeeting from '../assets/trust_meeting.png';
 
 const WhyUs = () => {
@@ -50,7 +50,7 @@ const WhyUs = () => {
                 <p className="section-subtitle">Growth is nothing without security. We architect systems that ensure your legacy remains untouchable by market volatility.</p>
                 <div className="gm-pts">
                   <div className="gm-pt">
-                    <div className="gm-pt-icon"><TrendingUp size={24} /></div>
+                    <div className="gm-pt-icon"><LineChart size={24} /></div>
                     <div className="gm-pt-text">
                       <h4>Alpha-Focused Portfolios</h4>
                       <p>Proprietary SIP baskets and multi-manager strategies designed to outperform standard benchmarks consistently.</p>

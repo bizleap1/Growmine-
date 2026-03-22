@@ -1,0 +1,6 @@
+﻿
+> growmine@0.0.0 build
+> tsc -b && vite build
+
+src/components/Services.tsx(1,42): error TS6133: 'PieChart' is declared but its value is never read.
+src/components/WhyUs.tsx(1,22): error TS6133: 'Users' is declared but its value is never read.
