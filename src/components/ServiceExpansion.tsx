@@ -1,111 +1,46 @@
-import { motion } from "framer-motion";
-import "./ServiceExpansion.css";
-
-const additionalServices = [
-  {
-    title: "Claims Assistance",
-    desc: "End-to-end support during insurance claims.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600"
-  },
-  {
-    title: "Portfolio Review",
-    desc: "Expert analysis of your existing investments.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600"
-  },
-  {
-    title: "Tax Planning",
-    desc: "Maximize your tax savings legally and smartly.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600"
-  },
-  {
-    title: "Retirement Planning",
-    desc: "Ensure a comfortable and stress-free retirement.",
-    image: "https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=600"
-  },
-  {
-    title: "Family Protection",
-    desc: "Customized coverage for all family members.",
-    image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600"
-  },
-  {
-    title: "Goal-Based Saving",
-    desc: "Save for marriage, education, or your dream home.",
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600"
-  }
-];
-
-const stats = [
-  { value: "5000+", label: "Happy Families", icon: "👨‍👩‍👧‍👦" },
-  { value: "15+", label: "Years Experience", icon: "💎" },
-  { value: "10Cr+", label: "Assets Managed", icon: "📈" },
-  { value: "99%", label: "Claim Success", icon: "🏆" }
+const ADDS = [
+  { t: "Life Portfolio", d: "Direct plans with legacy protection.", i: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&q=80&w=800" },
+  { t: "Family Health", d: "Zero-deductible premium coverage.", i: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=800" },
+  { t: "Smart SIPs", d: "Algorithms tuned for alpha yields.", i: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=800" }, // CHARTS / FINANCE
+  { t: "Claim Fortress", d: "Legal & financial claim protection.", i: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=800" },
 ];
 
 const ServiceExpansion = () => {
   return (
-    <section className="service-expansion">
-      <div className="container">
-        <div className="section-header-left">
-          <span className="section-tag">Value Added</span>
-          <h2 className="section-title">Why Choose GrowMine?</h2>
-          <p className="section-subtitle">We go beyond simple transactions to provide comprehensive financial care.</p>
-        </div>
-        
-        <div className="expansion-grid-wide">
-          {additionalServices.map((service, index) => (
-            <motion.div 
-              key={index}
-              className="expansion-image-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <div className="card-image-wrapper">
-                <img src={service.image} alt={service.title} />
-                <div className="card-image-overlay"></div>
-              </div>
-              <div className="card-text-content">
-                <h4>{service.title}</h4>
-                <p>{service.desc}</p>
-                <div className="card-hover-line"></div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="stats-grid-container">
-          <div className="stats-header-left">
-            <h3>Our Impact in Numbers</h3>
+    <>
+      <style>{`
+        .gm-add-sec { padding: 100px 0; background: #ffffff; }
+        .gm-add-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+        .gm-add-card { 
+          height: 440px; border-radius: 32px; overflow: hidden; position: relative;
+          border: 1px solid rgba(0, 32, 52, 0.05); cursor: pointer; background: #000;
+        }
+        .gm-add-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0.9; }
+        .gm-add-card:hover .gm-add-img { transform: scale(1.05); opacity: 1; }
+        .gm-add-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; }
+        .gm-add-card h4 { color: #002034; font-family: 'Inter', sans-serif; font-weight: 900; font-size: 1.4rem; margin-bottom: 8px; }
+        .gm-add-card p { color: rgba(0, 32, 52, 0.7); font-size: 1rem; margin-bottom: 0; font-weight: 500; }
+      `}</style>
+      <section className="gm-add-sec">
+        <div className="container">
+          <div className="rev" style={{ marginBottom: '60px' }}>
+            <span className="section-tag">Extended Solutions</span>
+            <h2 className="section-title">The GrowMine Ecosystem</h2>
           </div>
-          <div className="stats-multi-grid">
-            {stats.map((stat, index) => (
-              <motion.div 
-                key={index} 
-                className="stat-card-refined"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, type: "spring", stiffness: 100 }}
-                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(16, 185, 129, 0.15)" }}
-              >
-                <div className="stat-icon-floating">{stat.icon}</div>
-                <motion.span 
-                  className="stat-value-large"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.3 }}
-                >
-                  {stat.value}
-                </motion.span>
-                <span className="stat-label-refined">{stat.label}</span>
-                <div className="stat-card-bg-glow"></div>
-              </motion.div>
+          <div className="gm-add-grid">
+            {ADDS.map((a, i) => (
+              <div key={i} className="gm-add-card rev" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <img src={a.i} alt={a.t} className="gm-add-img" />
+                <div className="gm-add-ov">
+                  <h4>{a.t}</h4>
+                  <p>{a.d}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

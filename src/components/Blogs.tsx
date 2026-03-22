@@ -1,122 +1,61 @@
-import { motion } from "framer-motion";
-import { Calendar, User, ArrowRight } from "lucide-react";
-import "./Blogs.css";
-
-const blogs = [
-  {
-    id: 1,
-    title: "Why SIP is the Best Way to Build Lifetime Wealth",
-    excerpt: "Discover the power of compounding and why starting early with a small SIP can lead to a massive corpus over 20 years.",
-    category: "Investments",
-    date: "Mar 15, 2024",
-    author: "Rakesh Verma",
-    image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 2,
-    title: "5 Crucial Health Insurance Riders You Shouldn't Ignore",
-    excerpt: "Critical illness, restoration benefit, and more. Learn how to customize your health plan for maximum protection.",
-    category: "Insurance",
-    date: "Mar 12, 2024",
-    author: "Sunita Rao",
-    image: "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 3,
-    title: "Tax Planning 101: How to Save More Under Section 80C",
-    excerpt: "From ELSS to PPF, find out the most efficient tax-saving instruments for the current financial year.",
-    category: "Tax Planning",
-    date: "Mar 10, 2024",
-    author: "Anil Kulkarni",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 4,
-    title: "Vehicle Insurance: Direct vs Agent Claims",
-    excerpt: "Why having a local advisor in Nagpur makes all the difference during a midnight emergency claim.",
-    category: "Expert Advice",
-    date: "Mar 08, 2024",
-    author: "GrowMine Team",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 5,
-    title: "Retirement Planning: Is ₹1 Crore Enough in 2040?",
-    excerpt: "Calculating inflation and lifestyle costs to build a realistic nest egg for your golden years.",
-    category: "Retirement",
-    date: "Mar 05, 2024",
-    author: "Rakesh Verma",
-    image: "https://images.unsplash.com/photo-1534483509719-3feaee7c30da?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 6,
-    title: "Women and Financial Independence: A New Era",
-    excerpt: "Empowering women in Nagpur to take charge of their own portfolios and secure their future.",
-    category: "Empowerment",
-    date: "Mar 02, 2024",
-    author: "Sunita Rao",
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 7,
-    title: "Mutual Fund Myths Debunked",
-    excerpt: "Do you need a lot of money to start? Is it all gambling? We clear up common misconceptions.",
-    category: "Education",
-    date: "Feb 28, 2024",
-    author: "Anil Kulkarni",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600"
-  },
-  {
-    id: 8,
-    title: "Understanding Term Life Insurance",
-    excerpt: "Why term insurance is the most important financial gift you can give to your family.",
-    category: "Insurance",
-    date: "Feb 25, 2024",
-    author: "GrowMine Team",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600"
-  }
+const BLOGS = [
+  { t: "Maximizing SIP Returns in 2024", d: "A deep dive into the 7-factor model and how it helps Nagpur investors beat indices.", c: "Wealth", i: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=800&auto=format&fit=crop" },
+  { t: "Navigating Claim Rejections", d: "How our concierge system handles difficult health and motor insurance claims successfully.", c: "Insurance", i: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop" },
+  { t: "Tax Planning for HNI Households", d: "Strategic 80C and ELSS techniques to preserve net worth against high inflation.", c: "Taxation", i: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop" },
+  { t: "The Future of Estate Planning", d: "Securing your family's future with institutional-grade legal and financial frameworks.", c: "Legacy", i: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800&auto=format&fit=crop" },
+  { t: "Algorithmic Wealth Management", d: "Breaking down how high-precision algorithms outperform traditional portfolio sets.", c: "Tech", i: "https://images.unsplash.com/photo-1611974717483-360099563825?q=80&w=800&auto=format&fit=crop" },
+  { t: "Premium Health Ecosystems", d: "Beyond basic coverage: accessing global healthcare networks for discerning families.", c: "Health", i: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop" },
 ];
 
 const Blogs = () => {
   return (
-    <section className="blogs" id="blogs">
-      <div className="container">
-        <div className="section-header-left">
-          <span className="section-tag">Insights & News</span>
-          <h2 className="section-title">Latest Financial Blogs</h2>
-          <p className="section-subtitle">Stay updated with the latest trends in investments, insurance, and wealth management.</p>
-        </div>
+    <>
+      <style>{`
+        .gm-blog-sec { padding: 140px 0; background: #ffffff; }
+        .gm-blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-top: 80px; }
+        .gm-blog-card { 
+          background: #ffffff; border-radius: 32px; overflow: hidden;
+          border: 1px solid rgba(0, 32, 52, 0.06); transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          display: flex; flex-direction: column;
+        }
+        .gm-blog-card:hover { transform: translateY(-12px); border-color: #002034; box-shadow: 0 40px 80px rgba(0, 32, 52, 0.08); }
+        .gm-blog-img-box { width: 100%; height: 260px; overflow: hidden; position: relative; background: #002034; }
+        .gm-blog-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .gm-blog-card:hover .gm-blog-img { transform: scale(1.05); }
+        .gm-blog-cat { position: absolute; top: 24px; right: 24px; background: #ffffff; color: #002034; padding: 8px 16px; border-radius: 100px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .gm-blog-content { padding: 40px; flex: 1; display: flex; flex-direction: column; }
+        .gm-blog-title { color: #002034; font-size: 1.5rem; font-weight: 800; margin-bottom: 16px; line-height: 1.3; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; }
+        .gm-blog-desc { color: rgba(0, 32, 52, 0.6); font-size: 1.05rem; line-height: 1.7; margin-bottom: 32px; }
+        .gm-blog-more { color: #002034; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; display: flex; align-items: center; gap: 8px; margin-top: auto; }
+      `}</style>
+      <section className="gm-blog-sec" id="insights">
+        <div className="container">
+          <div className="rev" style={{ textAlign: 'left' }}>
+            <span className="section-tag" style={{ marginLeft: 0 }}>Market Insights</span>
+            <h2 className="section-title">GrowMine Intellectual Center</h2>
+            <p className="section-subtitle" style={{ maxWidth: '600px', marginLeft: 0 }}>
+              Strategic guidance and financial education for the informed investor.
+            </p>
+          </div>
 
-        <div className="blogs-grid">
-          {blogs.map((blog, index) => (
-            <motion.article 
-              key={blog.id}
-              className="blog-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (index % 4) * 0.1 }}
-            >
-              <div className="blog-image">
-                <img src={blog.image} alt={blog.title} />
-                <span className="blog-category">{blog.category}</span>
-              </div>
-              <div className="blog-content">
-                <div className="blog-meta">
-                  <span><Calendar size={14} /> {blog.date}</span>
-                  <span><User size={14} /> {blog.author}</span>
+          <div className="gm-blog-grid">
+            {BLOGS.map((b, i) => (
+              <div key={i} className="gm-blog-card rev" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="gm-blog-img-box">
+                   <img src={b.i} alt={b.t} className="gm-blog-img" />
+                   <div className="gm-blog-cat">{b.c}</div>
                 </div>
-                <h3>{blog.title}</h3>
-                <p>{blog.excerpt}</p>
-                <a href={`/blog/${blog.id}`} className="read-more">
-                  Read More <ArrowRight size={16} />
-                </a>
+                <div className="gm-blog-content">
+                  <h3 className="gm-blog-title">{b.t}</h3>
+                  <p className="gm-blog-desc">{b.d}</p>
+                  <div className="gm-blog-more">Read Full Insight <span>→</span></div>
+                </div>
               </div>
-            </motion.article>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
