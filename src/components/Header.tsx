@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/IMG_1631.PNG';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,8 +38,8 @@ const Header = () => {
           padding: 0 6%; /* MATCH HERO PADDING FOR PERFECT ALIGNMENT */
           margin: 0 auto;
         }
-        .gm-logo { height: 40px; cursor: pointer; display: flex; align-items: center; }
-        .gm-logo img { height: 100%; object-fit: contain; }
+        .gm-logo { height: 40px; cursor: pointer; display: flex; align-items: center; transition: all 0.3s; }
+        .gm-logo img { height: 100%; object-fit: contain; transform: scale(3.5); transform-origin: left center; }
         
         .gm-nav-links { display: flex; gap: 40px; align-items: center; margin-left: auto; margin-right: 60px; }
         .gm-nav-link {
@@ -99,13 +100,7 @@ const Header = () => {
       <header className={`gm-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="gm-nav-inner">
           <Link to="/" className="gm-logo" style={{ textDecoration: 'none' }}>
-            <span style={{ 
-              fontSize: '1.75rem', 
-              fontWeight: 950, 
-              color: '#002034', 
-              fontFamily: 'Inter, sans-serif',
-              letterSpacing: '-1.5px',
-            }}>GrowMine</span>
+            <img src={logo} alt="GrowMine Logo" />
           </Link>
 
           <nav className="gm-nav-links">

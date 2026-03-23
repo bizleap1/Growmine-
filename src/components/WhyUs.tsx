@@ -78,12 +78,12 @@ const WhyUs = () => {
                     <h3 style={{ color: '#002034', fontSize: '1.25rem', fontWeight: 900, marginBottom: '20px' }}>Proven Results</h3>
                     <div className="gm-metric-row">
                        <div className="gm-metric">
-                          <h4>₹230 Cr</h4>
-                          <p>Assets</p>
+                          <h4>50 cr+</h4>
+                          <p>assets</p>
                        </div>
                        <div className="gm-metric">
-                          <h4>5K+</h4>
-                          <p>Families</p>
+                          <h4>100+</h4>
+                          <p>families</p>
                        </div>
                     </div>
                 </div>

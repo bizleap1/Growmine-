@@ -10,7 +10,7 @@ const AboutPage = () => {
           <span className="section-tag">Our History</span>
           <h1 className="section-title">A Legacy of Nagpur's <br /><span style={{ color: '#002034' }}>Financial Guardianship.</span></h1>
           <p className="section-subtitle" style={{ maxWidth: '850px', marginBottom: '80px', fontSize: '1.25rem' }}>
-            Founded on the solid rock of absolute integrity, GrowMine has evolved into Nagpur's premier sanctuary for wealth preservation. We serve as the primary guardians for over 5,000 families, managing a legacy worth ₹230+ Crores with institutional-grade rigor and clinical precision.
+            Founded on the solid rock of absolute integrity, GrowMine has evolved into Nagpur's premier sanctuary for wealth preservation. We serve as the primary guardians for over 100+ families, managing a legacy worth 50 cr+ assets with institutional-grade rigor and clinical precision.
           </p>
         </div>
 
@@ -32,7 +32,7 @@ const AboutPage = () => {
                         <p style={{ color: 'rgba(0, 32, 52, 0.4)', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '1px' }}>Claims</p>
                     </div>
                     <div>
-                        <h3 style={{ fontSize: '2.5rem', color: '#002034', fontWeight: 900 }}>₹230cr</h3>
+                        <h3 style={{ fontSize: '2.5rem', color: '#002034', fontWeight: 900 }}>50 cr+</h3>
                         <p style={{ color: 'rgba(0, 32, 52, 0.4)', textTransform: 'uppercase', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '1px' }}>Assets</p>
                     </div>
                 </div>

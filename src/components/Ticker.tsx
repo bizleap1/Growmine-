@@ -1,7 +1,7 @@
 const TICKER = [
   { l: "SIP Returns", v: "+14.2% CAGR" },
-  { l: "Clients", v: "50,000+" },
-  { l: "AUM", v: "₹230 Cr" },
+  { l: "Clients", v: "100+" },
+  { l: "AUM", v: "50 cr+" },
   { l: "Claims Settled", v: "99.1%" },
   { l: "SEBI Registered", v: "Certified" },
   { l: "Google Rating", v: "4.9★" },
