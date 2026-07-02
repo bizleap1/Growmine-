@@ -103,7 +103,10 @@ const Footer = () => {
           </div>
 
           <div className="gm-footer-bottom">
-            <p className="gm-copyright">© 2024 GrowMine Executive. All rights reserved.</p>
+            <div className="gm-copyright">
+              © 2024 GrowMine Executive. All rights reserved.<br />
+              Developed and Managed by <a href="https://bizleap.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 'bold' }}>BIZLEAP</a>
+            </div>
             <div className="gm-f-links" style={{ flexDirection: 'row', gap: '30px' }}>
               <a href="#">Privacy Policy</a>
               <a href="#">Terms of Service</a>
